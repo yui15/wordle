@@ -1,10 +1,10 @@
-name:                simple-interactive-program
-version:             0.2.1.1
-github:              "nobsun/simple-interactive-program"
+name:                wordle
+version:             0.1.0.0
+github:              "yui15/wordle"
 license:             BSD3
-author:              "Nobuo Yamashita"
-maintainer:          "nobsun@sampou.org"
-copyright:           "Copyright: (c) 2022 Nobuo Yamashita"
+author:              "Yui Fukada"
+maintainer:          "fumufumu1510@gmail.com.org"
+copyright:           "Copyright: (c) 2022 Yui Fukada"
 
 extra-source-files:
 - README.md
@@ -33,7 +33,7 @@ library:
   source-dirs: src
 
 executables:
-  simple-interactive-program:
+  wordle:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -41,10 +41,10 @@ executables:
     # - -threaded
     # - -with-rtsopts=-N
     dependencies:
-    - simple-interactive-program
+    - wordle
 
 tests:
-  simple-interactive-program-test:
+  wordle-test:
     main:                spec.hs
     source-dirs:         test
     # ghc-options:
@@ -52,11 +52,11 @@ tests:
     # - -rtsopts
     # - -with-rtsopts=-N
     dependencies:
-    - simple-interactive-program
+    - wordle
     - hspec
     - main-tester
 
-  simple-interactive-program-doctest:
+  wordle-doctest:
     main:                doctests.hs
     source-dirs:         test
     # ghc-options:
@@ -64,5 +64,5 @@ tests:
     # - -rtsopts
     # - -with-rtsopts=-N
     dependencies:
-    - simple-interactive-program
+    - wordle
     - doctest

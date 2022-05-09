@@ -6,4 +6,6 @@ import Transition ( responser )
 import Interact ( interactWithPrompt )
 
 main :: IO ()
-main = interactWithPrompt "? " ":quit" . responser =<< list (return "") (const . readFile) =<< getArgs
+main = interactWithPrompt "? " ":quit" 
+　　　. responser =<< list (readFile "/usr/share/dict/words") (const . readFile) 
+　　　　　　　　　　 =<< getArgs
