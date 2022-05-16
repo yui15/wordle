@@ -6,7 +6,6 @@ cabal-version: 1.12
 
 name:           wordle
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/nobsun/simple-interactive-program#readme>
 homepage:       https://github.com/yui15/wordle#readme
 bug-reports:    https://github.com/yui15/wordle/issues
 author:         Yui Fukada
@@ -27,6 +26,7 @@ library
   exposed-modules:
       Interact
       Transition
+      Wordle
   other-modules:
       Paths_wordle
   hs-source-dirs:
