@@ -1,6 +1,7 @@
 {-# LANGUAGE EmptyDataDecls #-}
 module Wordle where
 
+import Data.Char
 import Data.Maybe
 import Interact 
 
@@ -37,7 +38,7 @@ initial extra inputs
     }
 
 initialDict :: Dict -> Dict
-initialDict dict = filter ((5 ==) . length) dict
+initialDict dict = filter (all isAscii) . filter (all isLower). filter ((5 ==) . length)
 
 eval :: MachineState -> [MachineState]
 eval state = state : rests
@@ -58,3 +59,23 @@ step state = case state of
                             , innerState = undefined
                             , output = Just "なんか関数"
                             }
+        where
+            newdict = filter f olddict
+            f = buildFilter guess pattern
+            [guess, pattern] = words i
+
+type Guess = String
+type Pattern = String
+
+predidate :: Guess -> Pattern -> (String -> String)
+predidate guess pattern candidate
+    = pattern == makePattern guess candidate
+
+makePattern :: Guess -> Candidate -> Pattern
+makePattern guess candidate
+    = case zipWith proc1 guess candidate of
+        guess' -> undefined
+
+    where
+        proc1 c d | c == d    = ('-', '-')
+                  | otherwise = ( c, d)

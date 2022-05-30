@@ -1,0 +1,22 @@
+:q
+:l src/Wordle.hs
+:l src/Wordle.hs
+:l src/Wordle.hs
+:l src/Wordle.hs
+:q
+;l src
+:q
+dict = initialDIct (words hoge)
+hoge <- readFile "/usr/share/dict/words"
+hoge <- readFile "/rsr/s
+:r
+length dict
+dict = initialDict (words hoge)
+import Wordle
+:import Wordle
+dict5 = initialDict (words hoge)
+putStr $ unlines $ words hoge
+words hoge
+:t hoge
+hoge <- readFile "/usr/share/dict/words"
+:l src/Wordle.hs
