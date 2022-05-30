@@ -74,7 +74,8 @@ predidate guess pattern candidate
 makePattern :: Guess -> Candidate -> Pattern
 makePattern guess candidate
     = case zipWith proc1 guess candidate of
-        guess' -> undefined
+        guess' -> unzip (zipWith proc1 guess candidate) of
+            (guess', candidate') -> undefined
 
     where
         proc1 c d | c == d    = ('-', '-')
